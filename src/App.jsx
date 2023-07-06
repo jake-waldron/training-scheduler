@@ -20,7 +20,6 @@ const shiftStart = [generateEmptyShift(), generateEmptyShift()];
 let originalShifts = [];
 
 function App() {
-	const [count, setCount] = useState(0);
 	const [shifts, setShifts] = useState(shiftStart);
 	const [trainingShifts, setTrainingShifts] = useState([]);
 
