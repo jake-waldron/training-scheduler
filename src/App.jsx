@@ -148,6 +148,7 @@ function App() {
 						initialView='timeGridDay'
 						initialDate={new Date('2023-07-23')}
 						headerToolbar={{ start: '', center: 'title', end: '' }}
+						slotMinTime={'09:00:00'}
 						events={shifts.map((shift) => {
 							return {
 								title: shift.scout,
