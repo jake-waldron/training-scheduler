@@ -44,6 +44,12 @@ function App() {
 		setShifts(updatedShifts);
 	}
 
+	function handleAddShift() {
+		const newShift = generateEmptyShift();
+		originalShifts = [...originalShifts, newShift];
+		setShifts([...shifts, newShift]);
+	}
+
 	return (
 		<main className='min-h-screen flex flex-col items-center p-20'>
 			<div className='flex h-auto w-full  justify-center'>
@@ -148,6 +154,22 @@ function App() {
 							))}
 						</div>
 					)}
+					<button className='mt-6 p-2 bg-slate-100 rounded-full' onClick={handleAddShift}>
+						<svg
+							className='svg-snoweb svg-theme-light'
+							height='30'
+							preserveAspectRatio='xMidYMid meet'
+							viewBox='0 0 100 100'
+							width='30'
+							x='0'
+							xmlns='http://www.w3.org/2000/svg'
+							y='0'>
+							<path
+								className='svg-fill-primary'
+								d='M50,18a6.4,6.4,0,0,1,6.4,6.4V43.6H75.6a6.4,6.4,0,1,1,0,12.8H56.4V75.6a6.4,6.4,0,0,1-12.8,0V56.4H24.4a6.4,6.4,0,0,1,0-12.8H43.6V24.4A6.4,6.4,0,0,1,50,18Z'
+								fillRule='evenodd'></path>
+						</svg>
+					</button>
 					<div className='flex flex-col items-center'>
 						<ShiftButton onClick={handleSubmit}>Process Schedule</ShiftButton>
 						{trainingShifts.length > 0 && (
