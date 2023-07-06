@@ -94,6 +94,7 @@ function App() {
 														color: 'blue',
 													};
 												});
+											originalShifts = [...newShifts];
 											setShifts(newShifts);
 										}}
 									/>
@@ -103,12 +104,20 @@ function App() {
 										value={shift.start}
 										onChange={(e) => {
 											const oldShifts = [...shifts];
-											const newShifts = oldShifts.map((oldShift) => {
-												if (oldShift.id === shift.id) {
-													return { ...oldShift, start: e.target.value };
-												}
-												return oldShift;
-											});
+											const newShifts = oldShifts
+												.map((oldShift) => {
+													if (oldShift.id === shift.id) {
+														return { ...oldShift, start: e.target.value };
+													}
+													return oldShift;
+												})
+												.map((shift) => {
+													return {
+														...shift,
+														color: 'blue',
+													};
+												});
+											originalShifts = [...newShifts];
 											setShifts(newShifts);
 										}}
 									/>
@@ -118,12 +127,19 @@ function App() {
 										value={shift.end}
 										onChange={(e) => {
 											const oldShifts = [...shifts];
-											const newShifts = oldShifts.map((oldShift) => {
-												if (oldShift.id === shift.id) {
-													return { ...oldShift, end: e.target.value };
-												}
-												return oldShift;
-											});
+											const newShifts = oldShifts
+												.map((oldShift) => {
+													if (oldShift.id === shift.id) {
+														return { ...oldShift, end: e.target.value };
+													}
+													return oldShift;
+												})
+												.map((shift) => {
+													return {
+														...shift,
+														color: 'blue',
+													};
+												});
 											originalShifts = [...newShifts];
 											setShifts(newShifts);
 										}}
